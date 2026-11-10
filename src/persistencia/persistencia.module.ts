@@ -4,9 +4,25 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EventoAuditoria } from './evento-auditoria.entity.js';
 import { MensajeMuerto } from './mensaje-muerto.entity.js';
 import { Notificacion } from './notificacion.entity.js';
-
-const ENTIDADES = [EventoAuditoria, Notificacion, MensajeMuerto];
-
+import { Alerta } from '../streaming/alertas/alerta.entity.js';
+import { VentanaLecturas } from '../streaming/alertas/ventana-lecturas.entity.js';
+import { LibroCatalogo } from '../streaming/catalogo/libro-catalogo.entity.js';
+import { EventoProcesado } from '../streaming/evento-procesado.entity.js';
+import { PrestamoSemana } from '../streaming/historial/prestamo-semana.entity.js';
+import { PrestamoVisto } from '../streaming/historial/prestamo-visto.entity.js';
+import { KpiMinuto } from '../streaming/panel/kpi-minuto.entity.js';
+const ENTIDADES = [
+  EventoAuditoria,
+  Notificacion,
+  MensajeMuerto,
+  KpiMinuto,
+  EventoProcesado,
+  VentanaLecturas,
+  Alerta,
+  PrestamoSemana,
+  PrestamoVisto,
+  LibroCatalogo,
+];
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
